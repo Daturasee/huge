@@ -1,0 +1,103 @@
+<!--pages/center/center.wxml-->
+<view class="bordertop"> </view>
+   <view class="head">新建项目</view>
+     <form bindsubmit="createproject"> 
+    <view class="tr">
+      <view class="r1">项目名称:</view>
+      <input class="value" name="projectname"  maxlength="10" value="{{projectname}}"></input>
+      </view>
+
+<view style="border-bottom:1px solid #C4BEBE;width:85%;margin:auto; align-items: center;  " ></view>
+<view class="tr">
+      <view class="r1">开始时间:</view>
+      <input type ="number" class="timeyear" name="sy"  maxlength="4" value="{{sy}}"></input>-
+      <input type ="number"   class="time" name="sm"  maxlength="2" value="{{sm}}"></input>-
+      <input type ="number"  class="time" name="sd"  maxlength="2" value="{{sd}}"></input>
+      </view>
+<view style="border-bottom:1px solid #C4BEBE;width:85%;margin:auto; align-items: center;  " ></view>
+    
+
+
+      <view class="tr">
+      <view class="r1">负责人:</view>
+    <view class="div" >
+     {{fzmember}}
+      </view>
+      
+      <view class="add"  data-item="{{item}}"  bindtap="addfuzeren"><image src="/image/1.1.png"></image> </view>
+      </view>
+
+     <view style="border-bottom:1px solid #C4BEBE;width:85%;margin:auto; align-items: center;  " ></view> 
+
+       <view class="tr">
+     <view class="r1">产品组成员:</view>
+      <view class="div" name="product">
+     {{cpmember}}
+      </view>
+      
+      <view class="add"  data-item="{{item}}"  bindtap="addchanping"><image src="/image/1.1.png"></image> </view>
+      </view>
+     <view style="border-bottom:1px solid #C4BEBE;width:85%;margin:auto; align-items: center;  " ></view> 
+
+
+      <view class="tr">
+      <view class="r1">程序组成员:</view>
+     
+      
+      <view class="div" name="program">
+     {{cxmember}}
+      </view>
+  
+      <view class="add"  data-item="{{item}}"  bindtap="addchengxu"><image src="/image/1.1.png"></image> </view>
+    </view>
+     <view style="border-bottom:1px solid #C4BEBE;width:85%;margin:auto; align-items: center;  " ></view> 
+
+      <view class="tr">
+
+      <view class="r1">设计组成员:</view>
+     <view class="div" name="design">
+      {{sjmember}}
+      </view>
+      <view  class="add"  data-item="{{item}}"  bindtap="addsheji"><image src="/image/1.1.png"></image> </view>
+    </view>
+     <view style="border-bottom:1px solid #C4BEBE;width:85%;margin:auto; align-items: center;  " ></view> 
+
+     <view class="tr">
+
+      <view class="r1">项目状态:</view>
+      <view class="div">
+      <text class="status"  bindtap="showprojectStatus" name="status">{{status}}</text>
+      </view>
+      
+    </view>
+     <view style="border-bottom:1px solid #C4BEBE;width:85%;margin:auto; align-items: center;  " ></view> 
+
+<view class="xmjj" >项目简介</view>
+<textarea maxlength="48" class="circle1" name="introduction" value="{{introduction}}"></textarea> 
+
+<button form-type="submit" class="head7">保存</button>
+</form>
+
+
+ <view class="zan-dialog {{ showprojectStatus ? 'zan-dialog--show' : '' }}">
+   <view class="zan-dialog__mask" bindtap="showprojectStatus" />
+   <view class="zan-dialog__container">
+    <view style='padding:100rpx;'>
+   <view  class="h1">项目状态</view>
+ 
+     <view class='select_box'>
+
+    
+        <text class='option'  wx:for='{{selectData}}' wx:key='this' data-index='{{index}}'   data-groups="{{selectData[index]}}" catchtap='optionTap'>{{item}}</text>
+    
+</view>
+
+        
+   
+     
+   
+        </view>
+          
+       </view>
+</view>
+

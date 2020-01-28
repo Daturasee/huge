@@ -1,0 +1,155 @@
+
+.header{
+  padding-top: 33rpx;
+  text-align: center;
+  font-weight:650;
+  font-size: 50rpx;
+}
+.div1{
+  padding-top: 20rpx;
+  justify-content: center;
+  text-align: center;
+}
+.logout{
+  text-align: center;
+  font-size: 33rpx;
+  margin: -42rpx auto auto 70%;
+
+}
+.login_or_info{
+ text-align: center;
+ font-size: 33rpx;
+}
+.container{
+  margin: 2% auto;
+  text-align: center;
+  width: 250px;
+
+}
+.bitPop{
+  margin: 10px auto auto 50px;
+}
+.projectView{
+  margin: 20px auto auto 155px;
+
+}
+.editProject{
+  margin: 25px auto auto 63px;
+}
+
+.bitPopimg{
+ width: 151px;
+ margin:  -70px auto auto 5px;
+}
+
+.projectViewimg
+{
+  width: 151px;
+  margin: -70px auto auto 110px;
+}
+.editProjectimg{
+  width: 151px;
+  margin: -70px auto auto 19px;
+}
+
+image{
+  width: 120px;
+  height: 120px;
+}
+
+.none{
+  background-color:transparent;
+}
+
+.dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: #b3b3b3;
+  display: none;
+  opacity:0.5
+}
+
+.dialog__container {
+  position: fixed;
+  bottom: 40%;
+  width: 500rpx;
+  margin-left: 125rpx;
+  background: #ffffff;
+  transform: translateY(300%);
+  transition: all 0.4s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+
+}
+.dialog--show .dialog__container
+ {
+  transform: translateY(0);
+}
+
+.dialog--show .dialog__mask {
+  display: block;
+}
+.titleLogin
+{
+  margin-top: -25px;
+  font-size: 19px;
+  text-align: center;
+  font-weight: 550;
+
+}
+.buttonSubmit
+{
+  background: #ffdd11;
+  border: #ffdd11 1px solid;
+  border-radius: 5px;
+  color:white;
+  margin:12% auto auto  -38rpx;
+  font-size: 30rpx;
+  text-align: center;
+  font-weight: 550;
+  height: 70rpx;
+  width: 370rpx;
+  
+}
+.sno  
+{
+  border: #919191 1px solid;
+  font-size: 30rpx;
+  text-align: left;
+  border-radius: 5px;
+  height: 70rpx;
+  padding-left: 5px;
+  width: 360rpx;
+  margin:12% auto auto  -38rpx;
+}
+.password
+{ 
+  font-size: 30rpx;
+  text-align: left;
+  border: #919191 1px solid;
+  border-radius: 5px;
+  height: 70rpx;
+  width: 360rpx;
+  max-lines: 15;
+  padding-left: 5px;
+  margin:12% auto auto  -38rpx;
+}
+.footer {
+  position: absolute;
+  text-align: center;
+  bottom: 5%;
+  width: 100%;
+
+ 
+}
+.footer image
+{
+  height: 30px;
+  width: 90px;
+}
+
+button::after{border-color:transparent}

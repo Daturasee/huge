@@ -1,0 +1,94 @@
+<!--pages/biter/biter.wxml-->
+<view class="bordertop"> </view>
+<view class="head">项目概览</view>
+
+
+<view class="navigation">
+<view style="background:{{bcolor1}};color: {{color1}};" id="正进行项目" class="menu1" bindtap="btnclick">正进行项目</view>
+<view style="background:{{bcolor2}};color: {{color2}};" id="已完成项目" class="menu1" bindtap="btnclick">已完成项目</view>
+<view style="background:{{bcolor3}};color: {{color3}};" id="已暂停项目" class="menu1" bindtap="btnclick">已暂停项目</view>
+
+
+</view >
+<view class="table">
+  <view class="tr bg-w">
+    <view class="status_name">状态</view>
+    <view class="status_name">项目名称</view>
+    <view class="department">负责人</view>
+  </view>
+  <block wx:for="{{showbiter}}" wx:key="id">
+    <view class="tr"   data-item="{{item}}" bindtap="showprojectinfo">
+
+      <view class="statusinfo">{{item.status}}</view>
+      <view class="projectname"><text class="type">{{item.projectname}}</text></view>
+       <view class="departmentname"><text class="type">{{item.department}}</text></view>
+   
+       <view class="add"  ><image src="/image/1.1.png"></image> </view>
+    </view>
+    
+    
+  </block>
+</view>
+
+<!--弹出个人简介框-->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="toggleDialog" />
+  <view class="zan-dialog__container">
+    <view style='padding:100rpx;'>
+     <view  class="h1">{{projectname}}</view>
+     <view  class="h3">起止时间:</view>
+     <view  class="h4"> {{starttime}}~{{finishtime}}</view>
+     <view  class="h3">项目成员:</view>
+
+     
+   
+    <view class="table_">
+     <view class="tr_">
+        <view class="td_">产品组</view>
+       <view class='select_box'>
+
+    
+        <view class='option'  wx:for='{{product}}' >{{item}}</view>
+    
+              </view>
+        </view>
+        <view class="tr_">
+        <view class="td_">设计组</view>
+           <view class='select_box'>
+
+    
+        <view class='option'  wx:for='{{design}}' >{{item}}</view>
+    
+              </view>
+        
+   
+        </view>
+          <view class="tr_">
+        <view class="td_">程序组</view>
+       
+       
+             <view class='select_box'>
+
+        <view class='option'  wx:for='{{program}}' >{{item}}</view>
+    
+              </view>
+        
+        </view>  
+        </view>  
+ 
+     
+   
+    <view class="table_">
+       <view  class="h3">项目简介</view>
+    
+        <view class="tr_">
+        <view class="intro">{{introduction}}</view>
+        </view>
+        
+        </view>  
+   </view>
+   
+  </view>
+</view>
+
+

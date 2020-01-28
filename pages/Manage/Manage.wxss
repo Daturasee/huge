@@ -1,0 +1,124 @@
+/* pages/Manage/Manage.wxss */
+.bordertop{
+border-bottom: #C4BEBE solid 1px;
+}
+.head{
+  position: fixed;
+  top:0px;
+  padding-top: 10px;
+  width: 100%;
+  height: 50rpx;
+  text-align: center;
+  font-weight:650;
+  font-size: 22px;
+  background: #ffffff;
+  padding-bottom: 20px;
+  
+}
+.Manage{
+position: fixed;
+top: 5%;
+width: auto;
+margin-left: 80%;
+
+}
+.table
+{
+  margin-top: 60px;
+}
+
+.footer {
+  position: fixed;
+  text-align: center;
+  bottom: 10%;
+  margin: auto;
+  width: 100%;
+
+ 
+}
+.footer image
+{
+ height: 60px;
+ width: 60px;
+}
+
+
+.tr {
+ 
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  border-bottom: #C4BEBE 1px solid;
+}
+
+
+.td1 {
+
+    width:35%;
+    justify-content: center;
+    text-align: left;
+    margin-left: 10%;
+    font-weight: 550;
+    font-size: 35rpx;
+
+}
+
+
+.td2{
+
+    width:45%;
+    justify-content: center;
+    text-align: center;
+    font-size: 33rpx;
+    margin-left: 5%;
+    color: #C4BEBE;
+}
+
+.type{
+
+font-size: 35rpx;
+
+}
+
+
+.td6{
+    width:7%;
+
+
+
+}
+.td6 image{
+   width: 10px;
+   height: 15px;
+   text-align: center;
+}
+
+.td text{
+  border-radius: 10px;
+  border: 1px solid #C4BEBE;
+}
+
+.th {
+  width: 15%;
+  justify-content: center;
+  color:black;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  font-size: 38rpx;
+  
+ 
+
+}
+.th2{
+  width: 70%;
+  justify-content: center;
+  color:black;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  font-size: 38rpx;
+  
+
+}

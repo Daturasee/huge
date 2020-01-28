@@ -1,0 +1,157 @@
+<!--pages/biter/biter.wxml-->
+<view class="bordertop"> </view>
+<view class="header">比特成员</view>
+
+<view wx:if="{{zhuguan}}"class="Manage">
+<image src="/image/add.png" bindtap="showaddpop"></image>
+<image src="/image/delete.png" bindtap="showdeletepop"></image> 
+
+</view>
+
+<view class="navigation">
+<view style="background:{{bcolor1}};color: {{color1}};" id="产品组" class="menu" bindtap="btnclick">产品组</view>
+<view style="background:{{bcolor2}};color: {{color2}};" id="程序组" class="menu" bindtap="btnclick">程序组</view>
+<view style="background:{{bcolor3}};color: {{color3}};" id="设计组" class="menu" bindtap="btnclick">设计组</view>
+<view style="background:{{bcolor4}};color: {{color4}};" id="运营组" class="menu" bindtap="btnclick">运营组</view>
+
+
+</view >
+<view class="table">
+  <view class="tr bg-w">
+    <view class="Status">状态</view>
+    <view class="Name">姓名</view>
+    <view class="tags ">个人标签</view>
+  </view>
+
+  
+  <block wx:for="{{showbiter}}" wx:key="id">
+    <view class="tr" >
+      <view class="td1">
+      <view wx:if="{{item.status}}">
+            <view wx:if="{{item.num}}">
+
+      <view class="yes" data-item='{{item}}' bindtap="changestatus">{{item.num}}</view>
+            </view>
+            <view wx:else>
+      <view class="no"  data-item='{{item}}' bindtap="changestatus">{{item.num}}</view>
+             </view> 
+       </view> 
+     
+      <view wx:else>
+       
+       <view class="stop" data-item='{{item}}' bindtap="changestatus">{{item.num}}</view>
+      
+      </view>
+
+      
+      </view>
+      <view class="td2" data-item="{{item}}" bindtap="toggleDialog" >{{item.name}}</view>
+      <view class="td3" data-item="{{item}}" bindtap="toggleDialog"><text>{{item.tags[0]}}</text></view>
+      <view class="td4" data-item="{{item}}" bindtap="toggleDialog"><text>{{item.tags[1]}}</text></view>
+      <view class="td5"  data-item="{{item}}" bindtap="toggleDialog" ><image src="/image/1.1.png"></image> </view>
+     
+    </view>
+    
+    
+  </block>
+</view>
+
+<!--弹出个人简介框-->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="toggleDialog" />
+  <view class="zan-dialog__container">
+    <view style='padding:100rpx;'>
+     <view  class="h1">{{popname}}</view>
+     <view  class="h3">个人标签</view>
+     
+    <view wx:if='{{tagno}}' class='select_box'>
+       暂无
+    </view>
+     <view wx:else class='select_box'>
+    <view  class='option'  wx:for='{{tags}}' >{{item}}</view>
+     </view>
+<view  class="h3">项目经历</view>
+     
+   
+     <view wx:if='{{pno}}' class='select_box'>
+      暂无
+     </view>
+      <view wx:else class='select_box'>
+     <view class='option' wx:for='{{projected}}' >{{item}}</view>
+    </view>
+   </view>
+   
+  </view>
+</view>
+
+
+<!--弹出添加成员框-->
+<view class="zan-dialog {{ showaddpeople ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="showaddpop" />
+  <view class="zan-dialog__container">
+    <view style='padding:100rpx;'>
+     <view  class="h3">添加成员</view>
+      <form bindsubmit="addpop"> 
+          <view class="table_">
+     <view class="tr_">
+        <view class="name">姓名:</view>
+        <view class="input"><input name="name" type="text" maxlength="7"></input></view>
+        
+   
+        </view>
+        <view class="tr_">
+        <view class="name">学号:</view>
+        <view class="input"><input name="sno" type="text"maxlength="12"></input></view>
+        
+   
+        </view>
+         <view class="tr_">
+        <view class="name2">选择组别:</view>
+       <view class='select_box'>
+    <view class='select' catchtap='selectTap'>
+        <text class='select_text'>{{selectData[index]}}</text>
+        <image class='select_img {{show&&"select_img_rotate"}}' src=''></image>         
+    </view>
+    <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+        <text class='option1' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}'   data-groups="{{selectData[index]}}" catchtap='optionTap'>{{item}}</text>
+    </view>
+</view>
+
+        
+   
+        </view>
+        
+        </view>  
+        <button form-type="submit" class="head7">保存</button>
+        </form>
+        
+   </view>
+   
+  </view>
+</view>
+
+
+<!--弹出删除人员框-->
+<view class="zan-dialog {{ showdeletepeople ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="showdeletepop" />
+  <view class="zan-dialog__container">
+    <view style='padding:100rpx;'>
+     <view  class="h3">删除成员</view>
+          <view class="table_">
+              <view class="tr_">
+                  <view class="name2">选择成员:</view>
+                  <view class='select_box'>
+                    <view class='select' catchtap='selectTap'>
+                    <text class='select_text'>{{selectDatadelete[index]}}</text>
+          
+                   </view>
+                   <view class='option_box' style='height:{{show?(selectDatadelete.length>5?300:selectDatadelete.length*80):0}}rpx;'>
+                    <text class='option1' style='{{index==selectDatadelete.length-1&&"border:0;"}}' wx:for='{{selectDatadelete}}' wx:key='this' data-index='{{index}}' data-name='{{selectDatadelete[index]}}'  catchtap='optionTapdelete'>{{item}}</text>
+                  </view>
+               </view>
+               </view>
+              </view>  
+              <button bindtap="deletepop"class="head8">删除</button>
+             </view>
+            </view>
+          </view>

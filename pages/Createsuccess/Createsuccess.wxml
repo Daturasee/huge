@@ -1,0 +1,12 @@
+<!--pages/Restartproject/Restartproject.wxml-->
+
+<view class="header"><image src="/image/OK.png" ></image></view> 
+
+
+<view class="t1">立项成功</view> 
+<view class="t1">比特er，承担起负责人的责任</view> 
+
+<view class="footer"> 
+
+<image src="/image/back.png" bindtap="back"></image> <!--比特工场标志-->
+</view> 

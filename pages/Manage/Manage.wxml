@@ -1,0 +1,20 @@
+<!--pages/Manage/Manage.wxml-->
+<loading hidden="{{hiddenLoading}}">正在加载</loading>
+<view class="bordertop"> </view>
+<view class="head">我负责的项目</view>
+<view class="table">
+
+  <block wx:for="{{showbiter}}" wx:key="id"> 
+    <view class="tr">
+      <view class="td1">{{item.projectname}}</view>
+      <view class="td2" data-item="{{item}}"bindtap="gotoedit">点击编辑项目信息</view>
+       <view class="td6" data-item="{{item}}"bindtap="gotoedit"><image src="/image/1.1.png"></image> </view>
+     
+    </view>
+    
+    
+  </block>
+ </view>
+<view class="footer"> 
+<image src="/image/create.png" bindtap="createnewproject"></image> <!--比特工场标志-->
+</view> 

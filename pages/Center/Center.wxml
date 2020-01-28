@@ -1,0 +1,75 @@
+<!--pages/center/center.wxml-->
+<view class="bordertop"> </view>
+<view class="header">个人中心</view>
+<form bindsubmit="onUserinfoInput"> 
+    <view class="list1">姓名：</view>
+    <input  name="newname" maxlength='8' class=" Input" placeholder='{{showOddName}}' placeholder-style="font-size:35rpx"/>
+
+    <view class="list1">年级：</view>
+    <input  name="newgrade" maxlength='4' class=" Input" placeholder='{{showOddGrade}}' placeholder-style="font-size:35rpx"/>
+
+    <view class="list1">组别：</view>
+    <input  name="newgroups" maxlength='3' class=" Input" placeholder='{{showOddGroups}}' placeholder-style="font-size:35rpx"/>
+
+    <view class="list2" bindtap="showChangePassword" > 修改密码：</view>
+    <image bindtap="showChangePassword" class="arrow" src="/image/1.1.png"></image>
+
+    <view class="list2"  bindtap="showProjectExperience"> 项目经历：</view>
+    <image bindtap="showProjectExperience" class="arrow" src="/image/1.1.png"></image>
+
+    <view class="poptag" >个人标签</view>
+      <view class="circle">
+        <view class="circle1">
+          <input maxlength='5' class="inputtag" placeholder-class='Tagplaceholder' name="newtag1"  placeholder='{{tagarray[0]}}'>
+          </input>
+        </view>
+      <view class="circle2">
+        <input maxlength='5' class="inputtag"  placeholder-class='Tagplaceholder' name="newtag2" placeholder='{{tagarray[1]}}'>
+          </input>
+        </view>
+      <view class="circle3">
+        <input maxlength='5' class="inputtag"  placeholder-class='Tagplaceholder' name="newtag3" placeholder='{{tagarray[2]}}'>
+        </input>
+      </view>
+    </view>
+    <button form-type="submit" class="save">保存</button>
+</form>
+
+
+<view class="zan-dialog {{ showChangePassword ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="ChangePassword" />
+  <view class="zan-dialog__container">
+    <view style='padding:100rpx;'>
+      <view  class="h1">修改密码</view>
+      <form bindsubmit="onPasswordChanged">
+        <input type="password" maxlength='12' placeholder="新密码："  class="password" name="pwd1"></input>
+        <input type="password" maxlength='12' placeholder="确认新密码："  class="password" name="pwd2"></input>
+        <button class="input"  form-type="submit">确认</button>     
+      </form>
+    </view>
+  </view>
+</view>
+
+<view class="zan-dialog {{ showProjectExperience ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="ProjectExperience" />
+  <view class="zan-dialog__container">
+    <view style='padding:100rpx;'>
+      <view  class="h1">项目经历</view>
+      <view class="h2">正在进行项目:</view>
+      <view wx:if='{{pgnum}}' class='select_box'>
+        <view class='option'  wx:for='{{projecting}}' >{{item}}</view>
+      </view>
+      <view wx:else class='select_box'> 
+        暂无
+      </view>
+      <view class="h2">已完成项目:</view>
+      <view wx:if='{{pdnum}}' class='select_box'>
+        <view class='option'  wx:for='{{projected}}' >{{item}}</view>
+      </view>
+      <view wx:else class='select_box'> 
+                   暂无
+      </view>
+    </view>
+  </view>
+</view>
+

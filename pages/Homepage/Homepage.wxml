@@ -1,0 +1,76 @@
+<!--Homepage.wxml-->
+<loading hidden="{{hiddenLoading}}">正在登录</loading> <!--登录中的loading提示-->
+<view class="header">首页</view>   <!--首页部分-->
+    
+<view  class="div1">  <!--登录或个人中心部分--> 
+    <view class="login_or_info" bindtap="doLogin_OR_Info">{{logonorinfo}}</view>        
+    <view wx:if="{{isLogin}}">
+      <view  bindtap="Logout" class="logout">退出</view>   <!--登录后显示退出按钮--> 
+    </view>
+</view>
+
+    
+<view class="container">    <!--中间图标部分-->
+
+    <div class="bitPop">
+        <h1>比特成员</h1>
+    </div>
+    <div class="bitPopimg" >   
+          <image animation="{{animation}}" src="/image/bit.png" bindtap="jumpInfo">
+          </image><!--旋转图案-->
+    </div> 
+    <!--比特成员图标-->
+
+
+    <div class="projectView">
+        <h1>项目概览</h1>
+    </div>
+    <div class="projectViewimg" >
+         <image animation="{{animation2}}" src="/image/bit.png" bindtap="jumpView"></image><!--旋转图案-->
+    </div> 
+    <!--项目概览图标-->
+
+
+    <div class="editProject">
+        <h1>项目管理</h1>
+    </div>
+    <div class="editProjectimg">
+         <image animation="{{animation}}" src="/image/bit.png" bindtap="jumpManage"></image><!--旋转图案-->
+    </div> 
+    <!--项目管理图标-->
+
+
+</view> 
+
+<view class="footer">    <!--底部logo-->
+    <image src="/image/bitworkshop.png"></image> <!--比特工场标志-->
+</view> 
+
+
+
+
+<!--登录弹出框-->
+<view class="dialog {{openLoginPage ? 'dialog--show' : '' }}"> 
+  <view class="dialog__mask" bindtap="toggleLogin"/> 
+  <view class="dialog__container"> 
+    <view style='padding:100rpx;'> 
+      <view  class="titleLogin">登录</view> 
+      <form bindsubmit="onUserLogin">
+        <input type="text" maxlength="12" placeholder= "学号：" class="sno" name="studentNo"></input>
+        <input type="password"  maxlength="12" placeholder="密码："  class="password" name="studentPwd"></input>
+        <button class="buttonSubmit"  form-type="submit">确认</button> 
+      </form>
+    </view> 
+  </view> 
+</view> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 

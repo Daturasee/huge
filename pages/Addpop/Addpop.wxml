@@ -1,0 +1,57 @@
+<!--pages/biter/biter.wxml-->
+<view class="bordertop"> </view>
+<view class="header">选择成员</view>
+
+
+<view class="navigation">
+<view  id="产品组" class="menu1" bindtap="btnclick">{{showgroups}}</view>
+
+
+</view >
+
+  <view class="tr bg-w">
+     <view class="choose">选择</view>
+    <view class="status_name">状态</view>
+    <view class="status_name">姓名</view>
+    <view class="tags">个人标签</view>
+  </view>
+
+  <checkbox-group bindchange="checkboxChange">
+  <block   class="member"  wx:for="{{showbiter}}" wx:key="id">
+
+    <view class="tr"  wx:if="{{item.status}}">
+      <view class="choose"><checkbox value="{{item.name}}" disabled="{{item.disabled}}"  checked="{{item.checked}}"/></view>
+      <view class="status_name">
+
+
+
+          <view wx:if="{{item.status}}">
+            <view wx:if="{{item.num}}">
+
+          <view class="yes" data-item='{{item}}'>{{item.num}}</view>
+            </view>
+            <view wx:else>
+          <view class="no"  data-item='{{item}}' >{{item.num}}</view>
+             </view> 
+            </view> 
+     
+           <view wx:else>
+       
+            <view class="stop" data-item='{{item}}' >{{item.num}}</view>
+      
+            </view>
+             </view>
+      <view class="popname">{{item.name}}</view>
+      <view class="tag1"><text class="type">{{item.tags[0]}}</text></view>
+      <view class="tag2"><text class="type">{{item.tags[1]}}</text></view>
+     
+    </view>
+    
+    
+  </block>
+  </checkbox-group>
+  
+<view class="member"></view>
+<view class="footer"> 
+<image src="/image/addpop.png" bindtap="querentianjia"></image> <!--比特工场标志-->
+</view> 

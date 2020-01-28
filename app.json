@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/Homepage/Homepage",
+    "pages/Depart/Depart",
+    "pages/Bitpeople/Bitpeople",
+    "pages/Createsuccess/Createsuccess",
+    "pages/Createproject/Createproject", 
+    "pages/ProjectOverview/ProjectOverview",
+    "pages/Manage/Manage",
+    "pages/Editingproject/Editingproject",
+    "pages/Addpop/Addpop",
+    "pages/Restartproject/Restartproject",
+    "pages/Center/Center"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "项目管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

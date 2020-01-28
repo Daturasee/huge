@@ -1,0 +1,31 @@
+
+.header{
+ margin-top: 35%;
+  width: 100%;
+  text-align: center;
+}
+.header image
+{
+ height: 70px;
+ width: 70px;
+}
+.t1
+{width: 100%;
+margin-top: 40px;  
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600
+}
+
+.footer {
+  position: absolute;
+  text-align: center;
+  bottom: 20%;
+  margin: auto;
+  width: 100%;
+}
+.footer image
+{
+ height: 50px;
+ width: 300px;
+}
